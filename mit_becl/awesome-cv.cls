@@ -1,7 +1,7 @@
 %% Start of file `awesome-cv.cls'.
 % Awesome CV Class File
 %
-% This document has been edited by the MIT Biological Engineering Communication Lab 
+% This document has been edited by the MIT Biological Engineering Communication Lab
 % Author: Divya Ramamoorthy
 %
 % The original version of the resume template has been downloaded from:
