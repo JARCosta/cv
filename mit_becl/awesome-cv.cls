@@ -555,14 +555,12 @@
 % Define a subentry of cv information
 % Usage: \cvsubentry{<position>}{<title>}{<date>}{<description>}
 \newcommand*{\cvsubentry}[4]{%
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \setlength\leftskip{0.2cm}
-    \subentrytitlestyle{#2} & \ifthenelse{\equal{#1}{}}
-      {\subentrydatestyle{#3}}{}
-    \ifthenelse{\equal{#1}{}}
-      {}
+  \noindent
+  \entrytitlestyle{#2}\par
+  \ifempty{#1#3#4}{}
+    {\entrypositionstyle{#1}%
+    \ifempty{#3}{}{{\space--\space}\entrylocationstyle{#3}}%
+    \ifempty{#4}{}{{\space--\space}\entrydatestyle{#4}}\par}
       {\subentrypositionstyle{#1} & \subentrydatestyle{#3} \\}
     \ifthenelse{\equal{#4}{}}
       {}
