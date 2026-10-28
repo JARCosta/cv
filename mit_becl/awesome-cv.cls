@@ -207,7 +207,7 @@
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\long\def\descriptionstyle#1{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -345,7 +345,7 @@
 % Others
 \newcommand{\acvSectionTopSkip}{3mm}
 \newcommand{\acvSectionContentTopSkip}{2.5mm}
-\newcommand{\acvEntryTopSkip}{0.5mm}
+\newcommand{\acvEntryTopSkip}{-5.5mm}
 
 
 
@@ -526,22 +526,21 @@
 
 % Define an environment for cventries
 \newenvironment{cventries}{%
-  \vspace{\acvSectionContentTopSkip}
-  \begin{center}
+  % \setlength\tabcolsep{0pt}
+  % \setlength{\extrarowheight}{0pt}
+  % \vspace{\acvSectionContentTopSkip}
+  % \begin{center}
 }{%
-  \end{center}
+  % \end{center}
 }
 % Define an entry of cv information
-% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
-\newcommand*{\cventry}[5]{%
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \ifempty{#1#3}{}
-    {\entrypositionstyle{#1} \hfill \entrylocationstyle{#3} \\}
-  \ifstrempty{#2#4}{}
-    {\entrytitlestyle{#2} \hfill \entrydatestyle{#4} \\}
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<hidden-description>}
+\long\def\cventry#1#2#3#4#5#6{%
+  \entrypositionstyle{#1} \hfill \entrylocationstyle{#3} \\
+  \entrytitlestyle{#2} \hfill \entrydatestyle{#4} \\
   \vspace{\acvEntryTopSkip}
-  \ifempty{#5}{}{\descriptionstyle{#5}}
+  \descriptionstyle{#5}
+  % \descriptionstyle{#6}
 }
 
 \newcommand*{\cvref}[2]{\href{#1}{\uline{#2}}}
