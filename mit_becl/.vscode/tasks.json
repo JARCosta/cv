@@ -6,6 +6,7 @@
       "type": "shell",
       "command": "latexmk",
       "args": [
+        "-f"
         "-pdfxe",
         "-outdir=out",
         "${workspaceFolder}\\JoaoRoqueCosta.tex"
