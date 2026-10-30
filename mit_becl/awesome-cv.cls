@@ -541,7 +541,7 @@
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<hidden-description>}
-\long\def\cventry#1#2#3#4#5#6{
+\long\def\cventry#1#2#3#4#5#6{%
   \ifempty{#1#3}{}{\entrypositionstyle{#1} \hfill \entrylocationstyle{#3} \\}
   \entrytitlestyle{#2} \hfill \entrydatestyle{#4} \\
   \vspace{\acvEntryTopSkip}
