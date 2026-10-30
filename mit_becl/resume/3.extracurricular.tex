@@ -16,13 +16,64 @@
     {} % Date(s)
     {
       \begin{cvitems} % Description(s) of experience/contributions/knowledge
-        \item {Engineered an automated betting bot for parimutuel systems using a modified Kelly Criterion for \textbf{risk management} and \textbf{optimal stake sizing}.}
-        \item {Developed a custom Discord-based ELO ranking and \textbf{automatic matchmaking system}.}
-        \item {Architected a multi-platform \textbf{arbitrage engine} and inventory manager. With automated price monitoring and trade execution across multiple marketplaces.}
-        \item {Built a full-stack system for \textbf{managing multiple modular projects} in a linux nuc (per machine resource management, product price tracking).}
+        \item {Built a self-hosted Linux system for \textbf{managing modular projects}, with per-machine resource management and a live monitoring dashboard.}
+        \item {Developed a Discord \textbf{ELO matchmaking system} with PostgreSQL match history and Redis-backed caching and queue management.}
       \end{cvitems}
     }
-    {}
+    {
+    Source notes, not rendered in the PDF.
+
+    Context:
+    - Personal software projects, self-hosted.
+
+    Key outcomes:
+      Autolab:
+        Autolab is a self-hosted system for managing multiple modular projects in a Linux NUC.
+        It includes per machine resource management, product price tracking, and a virtual dashboard for on-the-fly monitoring.
+
+        Discord ELO Matchmaking:
+          Developed a custom Discord-based ELO ranking and automatic matchmaking system.
+          The users can invite the bot to the server, start and add the participating users to the matchmaking queue, and the bot will automatically match users based on their ELO rating.
+          The ELO and match history are stored in a PostgreSQL database, and the bot uses Redis for caching and queue management.
+
+        StreamElements Viewer and Bettor:
+          Developed an automated betting bot for parimutuel systems with risk management and optimal stake sizing.
+          The bot uses a modified Kelly Criterion to determine the optimal stake size for each bet, and it can place bets on multiple platforms simultaneously.
+          The bot also includes a viewer that displays the current odds, the user's balance, and the user's betting history.
+
+        Arbitrage Engine:
+          Built a multi-platform arbitrage engine and inventory manager with automated price monitoring and trade execution across multiple marketplaces.
+          The engine monitors the prices of products across multiple marketplaces, and when it detects a price discrepancy, it automatically executes trades to take advantage of the arbitrage opportunity.
+          The inventory manager keeps track of the user's inventory across all marketplaces, and it can automatically restock products when they are sold out.
+
+        Wallapop Price Tracker:
+          Developed a price tracker for Wallapop, a Spanish online marketplace.
+          The user can define a desired basket of products, and the tracker will monitor the prices of those products and notify the user when the total price of the basket drops below a certain threshold, or is substantially discounted.
+          The tracker also includes a web interface that displays the current prices, the user's watchlist, and the user's price history.
+
+        Continente Price Tracker (Under development):
+          Developed a price tracker for Continente, a Portuguese supermarket chain.
+          The user can define a desired basket of products, and the tracker will monitor the prices of those products and notify the user when the total price of the basket drops below a certain threshold, or is substantially discounted.
+          The tracker also includes a web interface that displays the current prices, the user's watchlist, and the user's price history.
+
+        Sofascore Calendar Sync(Under development):
+          Developed a calendar sync tool for Sofascore, a sports live score website.
+          The user can select their favorite teams and leagues, and the tool will automatically sync the match schedule to the user's Google Calendar.
+          The tool also includes a web interface that displays the current schedule, the user's favorite teams, and the user's calendar events.
+
+    Stack and tools:
+    - Python, PostgreSQL, Redis, Docker, Linux, Discord API, Selenium, BeautifulSoup.
+
+    Skills and signals:
+    - Full-stack development, system architecture, automation, data scraping, and API integration.
+    - Risk management and optimal stake sizing in betting systems.
+    - Multi-platform development and integration with APIs.
+    - Resource management and optimization in a Linux environment.
+
+
+    End of source notes.
+
+    }
 %---------------------------------------------------------
   % \cventry
   %   {Communication Fellow} % Affiliation/role

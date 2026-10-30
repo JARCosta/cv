@@ -91,6 +91,12 @@
   pdfkeywords={}
 }
 
+% Reduce discretionary hyphenation and give TeX a little more room before it
+% resorts to poor breaks in dense CV text.
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\emergencystretch=2em
+
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -535,8 +541,8 @@
 }
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}{<hidden-description>}
-\long\def\cventry#1#2#3#4#5#6{%
-  \entrypositionstyle{#1} \hfill \entrylocationstyle{#3} \\
+\long\def\cventry#1#2#3#4#5#6{
+  \ifempty{#1#3}{}{\entrypositionstyle{#1} \hfill \entrylocationstyle{#3} \\}
   \entrytitlestyle{#2} \hfill \entrydatestyle{#4} \\
   \vspace{\acvEntryTopSkip}
   \descriptionstyle{#5}
