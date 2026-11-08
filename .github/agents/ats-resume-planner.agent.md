@@ -22,7 +22,16 @@ Do not read existing rendered resume sections as evidence or as a wording templa
 
 ## Output
 
-Visible content may use **bold text** and Markdown links. The renderer converts these to LaTeX; do not write LaTeX commands directly in the draft.
+Visible content supports Markdown inline formatting. The renderer converts it to LaTeX; do not write LaTeX commands directly in the draft.
+
+Formatting rules:
+
+- Bold the job-relevant technologies, methods, and evidence in the Summary, experience bullets, education, extracurriculars, and Skills sections with `**bold text**`.
+- Add a Markdown hyperlink when the source context contains a useful authoritative URL, especially for a thesis, relevant course, certification, project, or portfolio item: `[visible label](https://example.com)`.
+- Prefer selective emphasis: usually one or two key phrases per bullet, not every keyword.
+- Never invent a URL. Only link to URLs present in `context/` or the job-post source.
+- Example: `Built **Python** prototypes for [Azure AI Foundry](https://learn.microsoft.com/azure/ai-foundry/) data workflows.`
+- The renderer converts bold to `\\textbf{...}` and links to `\\cvref{url}{label}`.
 
 Create or replace exactly one file:
 
