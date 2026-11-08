@@ -6,13 +6,13 @@
       "type": "shell",
       "command": "latexmk",
       "args": [
-        "-f"
+        "-f",
         "-pdfxe",
         "-outdir=out",
-        "${workspaceFolder}\\JoaoRoqueCosta.tex"
+        "${workspaceFolder}\\tex\\JoaoRoqueCosta.tex"
       ],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}\\tex"
       },
       "presentation": {
         "reveal": "always",
