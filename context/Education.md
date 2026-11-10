@@ -33,6 +33,7 @@ Technologies used across coursework and thesis:
 - SQL (PostgreSQL, pgAdmin, SQL Server Management), MySQL, Microsoft SQL Server.
 - Pentaho (PDI, Server, Schema Workbench, Report Designer), DataCleaner, Saiku Analytics.
 - CmapTools, ArchiMate, Camunda Modeler, Enterprise Architecture (Sparx).
+- Latex, Markdown, Git, Linux, Bash Scripting, RESTful APIs.
 
 Skills and signals:
 - Technical writing and clear presentation.
@@ -78,7 +79,7 @@ Coursework highlights:
 
 Technologies used:
 - C, C++, Java, Python (NumPy, Pandas).
-- SQL (PostgreSQL), pgAdmin, Git, Linux, Bash Scripting, RESTful APIs, LaTeX.
+- SQL (PostgreSQL), pgAdmin, Git, Linux, Bash Scripting, RESTful APIs.
 
 Skills and signals:
 - Collaboration on complex technical projects.

@@ -143,11 +143,24 @@ def required_bullets(lines: list[str], label: str) -> list[str]:
     return values
 
 
-def cvitems(values: list[str]) -> str:
-    return "\n".join(f"        \\item {{{render_inline(value)}}}" for value in values)
+def cvitems(values: list[str], nested: dict[int, list[str]] | None = None) -> str:
+    rendered = []
+    for index, value in enumerate(values):
+        rendered.append(f"        \\item {{{render_inline(value)}}}")
+        if nested and index in nested:
+            rendered.append("        \\begin{itemize}")
+            rendered.extend(
+                f"          \\item {{{render_inline(child)}}}" for child in nested[index]
+            )
+            rendered.append("        \\end{itemize}")
+    return "\n".join(rendered)
 
 
-def cventry(metadata: tuple[str, str, str, str], values: list[str]) -> str:
+def cventry(
+    metadata: tuple[str, str, str, str],
+    values: list[str],
+    nested: dict[int, list[str]] | None = None,
+) -> str:
     organization, role, location, dates = metadata
     return f"""  \\cventry
     {{{escape_latex(role)}}}
@@ -156,7 +169,7 @@ def cventry(metadata: tuple[str, str, str, str], values: list[str]) -> str:
     {{{escape_latex(dates)}}}
     {{
       \\begin{{cvitems}}
-{cvitems(values)}
+{cvitems(values, nested)}
       \\end{{cvitems}}
     }}
     {{}}
@@ -227,12 +240,23 @@ def render_education(lines: list[str]) -> str:
         master_description,
         "Relevant Coursework: " + coursework,
         "Thesis: " + thesis,
-    ] + ["Thesis: " + point for point in thesis_points]
-    output = ["\\cvsection{Education}", "\\begin{cventries}", "", cventry((institution, degree, location, dates), master_values)]
+    ]
+    master_entry = cventry(
+        (institution, degree, location, dates),
+        master_values,
+        {2: thesis_points},
+    )
+    output = ["\\cvsection{Education}", "\\begin{cventries}", "", master_entry]
 
     institution, degree, location, dates = EDUCATION_METADATA["Bachelor's Degree"]
-    bachelor_values = ["Relevant Areas: " + areas] + ["Relevant Project: " + project for project in projects]
-    output.append(cventry((institution, degree, location, dates), bachelor_values))
+    bachelor_values = ["Relevant Areas: " + areas]
+    output.append(
+        cventry(
+            (institution, degree, location, dates),
+            bachelor_values,
+            {0: projects},
+        )
+    )
     output.append("\\end{cventries}\n")
     return "\n".join(output)
 
