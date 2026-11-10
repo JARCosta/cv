@@ -1,4 +1,5 @@
 tex/out/*
+tex/generated
 !tex/out/*.pdf
 
 posts
