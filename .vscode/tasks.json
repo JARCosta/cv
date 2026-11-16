@@ -1,33 +1,33 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "LaTeX: Build JoaoRoqueCosta",
-      "type": "shell",
-      "command": "latexmk",
-      "args": [
-        "-f",
-        "-pdfxe",
-        "-outdir=out",
-        "${workspaceFolder}\\tex\\JoaoRoqueCosta.tex"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}\\tex"
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated",
-        "clear": true
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "icon": {
-        "id": "edit",
-        "color": "terminal.ansiCyan"
-      },
-      "problemMatcher": []
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "LaTeX: Build JoaoRoqueCosta",
+			"type": "shell",
+			"command": "latexmk",
+			"args": [
+				"-f",
+				"-pdfxe",
+				"-outdir=out",
+				"${workspaceFolder}\\tex\\JoaoRoqueCosta.tex"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}\\tex"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"icon": {
+				"id": "edit",
+				"color": "terminal.ansiCyan"
+			},
+			"problemMatcher": []
+		}
+	]
 }
