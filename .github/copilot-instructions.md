@@ -23,6 +23,7 @@ Agent responsibilities (high level)
 Tool contract and best practices
 
 - Planner must only accept a single URL as input and produce a complete Markdown draft; do not attempt to render or build inside the Planner LLM turn.
+- Preserve the candidate's substantive evidence when tailoring. If a draft needs shortening, trim the Skills section first, then less relevant detail elsewhere; avoid aggressive cutting and do not silently remove relevant experience just to force one page.
 - Use the provided renderer wrapper (`scripts/run_renderer_tool.py`) as the canonical local tool to convert the draft into LaTeX sections. This avoids extra LLM tokens and keeps rendering deterministic.
 - The orchestrator must not pass the Markdown content back into the LLM for rendering; treat the renderer output files as authoritative.
 - Sanitize user-provided URLs minimally: only allow HTTP/HTTPS; report unreachable or blocked pages clearly.
